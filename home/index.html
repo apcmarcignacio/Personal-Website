@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayzee | Portfolio</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-wrapper">
+            <img src="images/Profile.svg" alt="Jayzee Profile" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Jayzee&background=00d4ff&color=fff&size=150'">
+        </div>
+
+        <h1>Jayzee</h1>
+        <p class="subtitle">IT Student | Cybersecurity Enthusiast</p>
+
+        <div class="nav-grid">
+            <button class="nav-btn active" onclick="showSection('about', this)">About Me</button>
+            <button class="nav-btn" onclick="showSection('education', this)">Education</button>
+            <button class="nav-btn" onclick="showSection('hobbies', this)">Hobbies/Interests</button>
+            <button class="nav-btn" onclick="showSection('goals', this)">Goals in Life</button>
+        </div>
+
+        <div class="content-display">
+            
+            <div id="about" class="content-section active-content">
+                <h3 class="content-title">About Me</h3>
+                <p>
+                    I am deeply interested in technology, especially in how new innovations shape the future. 
+                    I enjoy understanding how things work, from machine parts to computer systems. 
+                    My passion lies in cybersecurity and building innovative solutions.
+                </p>
+            </div>
+
+            <div id="education" class="content-section">
+                <h3 class="content-title">Education</h3>
+                <ul>
+                    <li><strong>Bachelor of Science in IT</strong><br>Current Studies</li>
+                    <br>
+                    <li><strong>National University MOA</strong><br>Senior High School Graduate</li>
+                    <li><em>Awarded NU SHS 50% Tuition Scholarship</em></li>
+                </ul>
+            </div>
+
+            <div id="hobbies" class="content-section">
+                <h3 class="content-title">Hobbies & Interests</h3>
+                <ul>
+                    <li>🎮 <strong>Esports & Gaming:</strong> Strategy games and team coordination.</li>
+                    <li>♟️ <strong>Chess:</strong> Mental strategy and quick decision making.</li>
+                    <li>🔧 <strong>Hardware:</strong> Building and troubleshooting CPUs/Desktops.</li>
+                    <li>🎵 <strong>Music:</strong> Listening to various genres while working.</li>
+                </ul>
+            </div>
+
+            <div id="goals" class="content-section">
+                <h3 class="content-title">Goals in Life</h3>
+                <ul>
+                    <li>🔐 <strong>Cybersecurity Firm:</strong> Establish my own firm specializing in digital asset protection.</li>
+                    <li>💼 <strong>Financial Freedom:</strong> Achieve independence to support my dreams.</li>
+                    <li>👨‍👩‍👦 <strong>Family:</strong> Provide for the people I cherish.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId, btnElement) {
+            // 1. Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active-content');
+            });
+
+            // 2. Show the specific section clicked
+            document.getElementById(sectionId).classList.add('active-content');
+
+            // 3. Reset all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // 4. Highlight the clicked button
+            btnElement.classList.add('active');
+        }
+    </script>
+</body>
+</html>
